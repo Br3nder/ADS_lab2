@@ -55,15 +55,15 @@ void quickSort(int* arr, int first, int last)
 
 void insertionSort(int* arr, int size)
 {
-    int tmp, // временная переменная для хранения значения элемента сортируемого массива
-        item; // индекс предыдущего элемента
+    int tmp, 
+        item; // last element
     for (int counter = 1; counter < size; counter++)
     {
-        tmp = arr[counter]; // инициализируем временную переменную текущим значением элемента массива
-        item = counter - 1; // запоминаем индекс предыдущего элемента массива
-        while (item >= 0 && arr[item] > tmp) // пока индекс не равен 0 и предыдущий элемент массива больше текущего
+        tmp = arr[counter]; 
+        item = counter - 1; // save prev element index
+        while (item >= 0 && arr[item] > tmp)
         {
-            arr[item + 1] = arr[item]; // перестановка элементов массива
+            arr[item + 1] = arr[item];
             arr[item] = tmp;
             item--;
         }
@@ -91,14 +91,14 @@ int binarySearch(int *arr, int size, int num)
 {
     int left = -1;
     int middle;
-    int right = size - 1; // Левая и правая граница поиска
-    while (right - left > 1) // Пока правая граница правее левой
+    int right = size - 1; // left & right searching border
+    while (right - left > 1)
     {
-        middle = (left + right) / 2; // Середина области поиска
+        middle = (left + right) / 2; // middle of searching zone
         if (arr[middle] >= num)
-            right = middle; // Передвигаем правую границу`
+            right = middle; 
         else
-            left = middle; // Иначе передвигаем левую границу
+            left = middle; 
     }
     if (arr[right] == num)
         return 1;
