@@ -39,7 +39,7 @@ namespace Tests
 		{
 			char arr[10];
 			fillCharArrayByRandom(arr, 10, 128);
-			countingSort(arr, 10, 128);
+			countingSort(arr, 10);
 			Assert::IsTrue(isSortChar(arr, 10));
 		}
 		TEST_METHOD(TestBinarySearch)
