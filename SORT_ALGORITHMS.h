@@ -4,7 +4,7 @@ int binarySearch(int* arr, int size, int num);
 void quickSort(int *arr, int first, int last);
 void insertionSort(int* arr, int size);
 void bogoSort(int *arr, int size);
-void countingSort(char* arr, int size, int max);
+void countingSort(char* arr, int size);
 void showArray(int* arr, int size);
 void showArray(char* arr, int size);
 bool isSort(int* arr, int size);

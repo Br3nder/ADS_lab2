@@ -53,41 +53,44 @@ void quickSort(int* arr, int first, int last)
     }
 }
 
-void insertionSort(int* arr, int size)
+void insertionSort(int* array, int size)
 {
     int tmp, 
         item; // last element
     for (int counter = 1; counter < size; counter++)
     {
-        tmp = arr[counter]; 
+        tmp = array[counter]; 
         item = counter - 1; // save prev element index
-        while (item >= 0 && arr[item] > tmp)
+        while (item >= 0 && array[item] > tmp)
         {
-            arr[item + 1] = arr[item];
-            arr[item] = tmp;
+            array[item + 1] = array[item];
+            array[item] = tmp;
             item--;
         }
     }
 }
 
-void countingSort(char* arr, int size, int max)
+void countingSort(char* array, int size)
 {
+    char max = 0;
+    for (int i = 0; i < size; i++)
+        if (array[i] > max) max = array[i];
     char* arr2 = new char[max + 1];
     for (int i = 0; i < max + 1; i++)
         arr2[i] = 0;
     for (int i = 0; i < size; ++i) {
-        ++arr2[arr[i]];
+        ++arr2[array[i]];
     }
     int b = 0;
     for (int i = 0; i < max + 1; ++i) {
         for (int j = 0; j < arr2[i]; ++j) {
-            arr[b++] = i;
+            array[b++] = i;
         }
     }
     
 }
 
-int binarySearch(int *arr, int size, int num)
+int binarySearch(int *array, int size, int num)
 {
     int left = -1;
     int middle;
@@ -95,12 +98,12 @@ int binarySearch(int *arr, int size, int num)
     while (right - left > 1)
     {
         middle = (left + right) / 2; // middle of searching zone
-        if (arr[middle] >= num)
+        if (array[middle] >= num)
             right = middle; 
         else
             left = middle; 
     }
-    if (arr[right] == num)
+    if (array[right] == num)
         return 1;
     else
         return 0;

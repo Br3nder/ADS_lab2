@@ -31,7 +31,7 @@ int main()
 	cout << endl;
 	cout << "COUNTING SORT\nStart: ";
 	showArray(arrC, SIZE);
-	countingSort(arrC, SIZE, 128);
+	countingSort(arrC, SIZE);
 	cout << "\nEnd: ";
 	showArray(arrC, SIZE);
 	cout << endl;
