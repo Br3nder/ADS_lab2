@@ -1,16 +1,16 @@
 #pragma once
 
-int binarySearch(int* arr, int size, int num);
-void quickSort(int *arr, int first, int last);
-void insertionSort(int* arr, int size);
-void bogoSort(int *arr, int size);
-void countingSort(char* arr, int size);
-void showArray(int* arr, int size);
-void showArray(char* arr, int size);
-bool isSort(int* arr, int size);
-void fillArrayByRandom(int* arr, int size, int maxNum);
-void fillCharArrayByRandom(char* arr, int size, int maxNum);
-bool isSortChar(char* arr, int size);
+int binarySearch(int* array, int size, int num);
+void quickSort(int *array, int first, int last);
+void insertionSort(int* array, int size);
+void bogoSort(int *array, int size);
+void countingSort(char* array, int size);
+void showArray(int* array, int size);
+void showArray(char* array, int size);
+bool isSort(int* array, int size);
+void fillArrayByRandom(int* array, int size, int maxNum);
+void fillCharArrayByRandom(char* array, int size, int maxNum);
+bool isSortChar(char* array, int size);
 
 #include <chrono>
 

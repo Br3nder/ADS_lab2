@@ -1,55 +1,55 @@
 #include <iostream>
 using namespace std;
 
-bool isSorted(int* arr, int size)
+bool isSorted(int* array, int size)
 {
     for (int i = 0; i < size - 1; i++)
-        if (arr[i] > arr[i + 1]) return false;
+        if (array[i] > array[i + 1]) return false;
     return true;
 }
 
-void shuffle(int *arr, int size)
+void shuffle(int *array, int size)
 {
     for (int i = 0; i < size; i++)
-        swap(arr[i], arr[rand() % size]);
+        swap(array[i], array[rand() % size]);
 }
 
-void showArray(int* arr, int size)
+void showArray(int* array, int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		cout << arr[i] << " ";
+		cout << array[i] << " ";
 	}
 }
 
-void showArray(char* arr, int size)
+void showArray(char* array, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << " ";
+        cout << array[i] << " ";
     }
 }
 
-void quickSort(int* arr, int first, int last)
+void quickSort(int* array, int first, int last)
 {	
     if (first < last)
     {
-        int left = first, right = last, pivot = arr[(left + right) / 2];
+        int left = first, right = last, pivot = array[(left + right) / 2];
         do
         {
-            while (arr[left] < pivot) left++;
-            while (arr[right] > pivot) right--;
+            while (array[left] < pivot) left++;
+            while (array[right] > pivot) right--;
             if (left <= right)
             {
-                int tmp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = tmp;
+                int tmp = array[left];
+                array[left] = array[right];
+                array[right] = tmp;
                 left++;
                 right--;
             }
         } while (left <= right);
-        quickSort(arr, first, right);
-        quickSort(arr, left, last);
+        quickSort(array, first, right);
+        quickSort(array, left, last);
     }
 }
 
@@ -109,10 +109,10 @@ int binarySearch(int *array, int size, int num)
         return 0;
 }
 
-void bogoSort(int *arr, int size)
+void bogoSort(int *array, int size)
 {
     int i = 1;
-    while (!isSorted(arr, size))
+    while (!isSorted(array, size))
     {
         /*if (i % 10000 == 0)
         {
@@ -120,34 +120,34 @@ void bogoSort(int *arr, int size)
             cout << "I'm trying... It's " << i << " attempt!\n";
         }*/
             
-        shuffle(arr, size);
+        shuffle(array, size);
         i++;
     }
     //cout << "I have done this with " << i << " attempts\n";
 }
 
-bool isSort(int* arr, int size)
+bool isSort(int* array, int size)
 {
     for (int i = 0; i < size - 1; i++)
-        if (arr[i + 1] < arr[i]) return false;
+        if (array[i + 1] < array[i]) return false;
     return true;
 }
 
-void fillArrayByRandom(int* arr, int size, int maxNum)
+void fillArrayByRandom(int* array, int size, int maxNum)
 {
     for (int i = 0; i < size; i++)
-        arr[i] = rand() % maxNum;
+        array[i] = rand() % maxNum;
 }
 
-void fillCharArrayByRandom(char* arr, int size, int maxNum)
+void fillCharArrayByRandom(char* array, int size, int maxNum)
 {
     for (int i = 0; i < size; i++)
-        arr[i] = rand() % maxNum;
+        array[i] = rand() % maxNum;
 }
 
-bool isSortChar(char* arr, int size)
+bool isSortChar(char* array, int size)
 {
     for (int i = 0; i < size - 1; i++)
-        if (arr[i + 1] < arr[i]) return false;
+        if (array[i + 1] < array[i]) return false;
     return true;
 }
